@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-resource-1
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: ussdevops.co.in
+    http:
+      paths:
+      - path: /maven-web-application
+         backend:
+          serviceName: mavensvc
+          servicePort: 80
+      - path: /java-web-app
+        backend:
+          serviceName: javadeploymentsvc
+          servicePort: 80	
